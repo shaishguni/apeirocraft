@@ -95,10 +95,10 @@ const Navbar = () => {
         {/* Links Section (Center) */}
         <div className={`hidden lg:flex lg:space-x-8 lg:items-center mx-auto`}>
           
-        <NavigationMenu className="hidden lg:block mx-auto">
+        <NavigationMenu className="hidden  lg:block mx-auto">
         <NavigationMenuList>
           <NavigationMenuItem>
-            <NavigationMenuTrigger className="bg-card text-base">
+            <NavigationMenuTrigger className=" text-base">
               Products
             </NavigationMenuTrigger>
             <NavigationMenuContent>
