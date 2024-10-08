@@ -27,7 +27,7 @@ export default function oRotLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased dark:text-white`}
       >
         <ThemeProvider
           attribute="class"

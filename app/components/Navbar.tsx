@@ -81,7 +81,7 @@ const Navbar = () => {
         <section className='flex items-center space-x-3'>
           <Image src={logo} width={50} height={50} alt="gg" className='transition-transform duration-300 transform hover:scale-110' />
           <Link href='/' className='font-extrabold text-2xl tracking-wide  hover:text-primary transition-colors'>
-            Apeirocraft
+            ApeiroCraft
           </Link>
         </section>
 
