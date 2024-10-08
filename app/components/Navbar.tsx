@@ -75,12 +75,12 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className='bg-white shadow-lg rounded-lg flex-1  mt-2 p-4 m-2   mx-4 lg:mx-0 flex justify-between items-center w-full lg:w-[1000px] lg:ml-48 transition-all duration-300'>
+    <div className='border-black shadow-inner dark:text-white  text-black  top-5  sticky border border-secondary z-40 rounded-2xl  flex-1  mt-2 p-4 m-2 bg-transparent w-[90%] md:w-[70%] lg:w-[75%] lg:max-w-screen-xl mx-4 lg:mx-0 flex justify-between items-center   lg:ml-48 transition-all duration-300'>
       <nav className='flex justify-between items-center w-full'>
         {/* Logo Section (Left) */}
         <section className='flex items-center space-x-3'>
           <Image src={logo} width={50} height={50} alt="gg" className='transition-transform duration-300 transform hover:scale-110' />
-          <Link href='/' className='font-extrabold text-2xl tracking-wide text-gray-800 hover:text-primary transition-colors'>
+          <Link href='/' className='font-extrabold text-2xl tracking-wide  hover:text-primary transition-colors'>
             Apeirocraft
           </Link>
         </section>
@@ -132,7 +132,7 @@ const Navbar = () => {
           <NavigationMenuItem>
             {routeList.map(({ href, label }) => (
               <NavigationMenuLink key={href} asChild>
-                <Link href={href} className="text-gray-600 px-2">
+                <Link href={href} className=" px-2">
                   {label}
                 </Link>
               </NavigationMenuLink>
