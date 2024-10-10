@@ -1,4 +1,3 @@
-import React from 'react'
 
 const HeroSection = () => {
   return (
@@ -11,8 +10,6 @@ const HeroSection = () => {
         <h1 className='text-5xl font-extrabold'>Experience The </h1>
       </div>
       </div>
-      
-      
     </div>
   )
 }
