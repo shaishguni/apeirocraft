@@ -6,8 +6,9 @@ import logo from "../../public/logo.png";
 import Image from 'next/image';       
 import Link from 'next/link';
 import { ModeToggle } from './ui/ThemeToggle';
-import { Button } from '@/components/ui/button';
+// import { Button } from '@/components/ui/button';
 import { MenuIcon, XIcon } from '@heroicons/react/outline';
+import { InstagramLogoIcon } from '@radix-ui/react-icons';
 // import {
 //   DropdownMenu,
 //   DropdownMenuContent,
@@ -75,7 +76,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className='border-black shadow-inner dark:text-white  bg-white text-black  top-5  sticky border border-secondary z-40 rounded-2xl  flex-1  mt-2 p-4 m-4 space-y-2 bg-transparent w-[90%] md:w-[70%] lg:w-[75%] lg:max-w-screen-xl mx-4 lg:mx-0 flex justify-between items-center   lg:ml-48 transition-all duration-300'>
+    <div className='border-black shadow-inner dark:text-white bg-white dark:bg-black  text-black  top-5  sticky border border-secondary z-40 rounded-2xl  flex-1  mt-2 p-4 m-4 space-y-2 bg-transparent w-[90%] md:w-[70%] lg:w-[75%] lg:max-w-screen-xl mx-4 lg:mx-0 flex justify-between items-center    lg:ml-48 transition-all duration-300'>
       <nav className='flex justify-between items-center w-full'>
         {/* Logo Section (Left) */}
         <section className='flex items-center space-x-3'>
@@ -146,9 +147,9 @@ const Navbar = () => {
         {/* Mode Toggle and Button Section (Right) */}
         <div className='hidden lg:flex items-center space-x-4'>
           <ModeToggle />
-          <Button className='bg-primary px-6 py-2 text-white rounded-full hover:bg-primary-dark shadow-lg transition-transform duration-200 transform hover:scale-105'>
-            Make It {"Your's"}
-          </Button>
+          {/* <div className='bg-card-foreground   dark:bg-card-foreground dark:text-white px-6 py-2 text-white rounded-full hover:bg-primary-dark shadow-lg transition-transform duration-200 transform hover:scale-105'> */}
+           <Link href="https://www.instagram.com/apeirocraft/" target="_blank"><InstagramLogoIcon className='dark:bg-white bg-black'/></Link> 
+          {/* </div> */}
         </div>
       </nav>
 
@@ -168,9 +169,9 @@ const Navbar = () => {
                 ))}
           <div className='flex items-center space-x-4 mt-4'>
             <ModeToggle />
-            <Button className='bg-primary px-6 py-2 text-white rounded-full hover:bg-primary-dark shadow-lg transition-transform duration-200 transform hover:scale-105'>
-              Make It {"Your's"}
-            </Button>
+            {/* <div className=' bg-card-foreground px-6 py-2 dark:bg-card-foreground dark:text-white rounded-full hover:bg-primary-dark shadow-lg transition-transform duration-200 transform hover:scale-105'> */}
+              <Link href="https://www.instagram.com/apeirocraft/" target="_blank" ><InstagramLogoIcon className='dark:bg-white bg-black'/></Link>
+            {/* </div> */}
           </div>
         </div>
       )}
