@@ -6,7 +6,7 @@ import logo from "../../public/logo.png";
 import Image from 'next/image';       
 import Link from 'next/link';
 import { ModeToggle } from './ui/ThemeToggle';
-// import { Button } from '@/components/ui/button';
+
 import { MenuIcon, XIcon } from '@heroicons/react/outline';
 import { InstagramLogoIcon } from '@radix-ui/react-icons';
 // import {
@@ -25,6 +25,7 @@ import { InstagramLogoIcon } from '@radix-ui/react-icons';
     NavigationMenuList,
     NavigationMenuTrigger,
   } from "@/components/ui/navigation-menu"
+import { Button } from '@/components/ui/button';
   
 
 
@@ -89,7 +90,7 @@ const Navbar = () => {
         {/* Mobile Hamburger Menu Icon */}
         <div className='lg:hidden'>
           <button onClick={() => setIsOpen(!isOpen)} className="text-gray-500 hover:text-gray-700 transition-colors">
-            {isOpen ? <XIcon className="w-8 h-8 p-2" /> : <MenuIcon className="w-8   h-8" />}
+            {isOpen ? <XIcon className="w-4 h-4 ml-6 " /> : <MenuIcon className="w-8   h-8" />}
           </button>
         </div>
 
@@ -147,9 +148,9 @@ const Navbar = () => {
         {/* Mode Toggle and Button Section (Right) */}
         <div className='hidden lg:flex items-center space-x-4'>
           <ModeToggle />
-          {/* <div className='bg-card-foreground   dark:bg-card-foreground dark:text-white px-6 py-2 text-white rounded-full hover:bg-primary-dark shadow-lg transition-transform duration-200 transform hover:scale-105'> */}
-           <Link href="https://www.instagram.com/apeirocraft/" target="_blank"><InstagramLogoIcon className='dark:bg-white bg-black'/></Link> 
-          {/* </div> */}
+          <Button className=' bg-foreground dark:bg-teal-500   px-6 py-2  rounded-full hover:bg-primary-dark shadow-lg transition-transform duration-200 transform hover:scale-105'>
+           <Link href="https://www.instagram.com/apeirocraft/" target="_blank"><InstagramLogoIcon /></Link> 
+          </Button>
         </div>
       </nav>
 
@@ -169,9 +170,9 @@ const Navbar = () => {
                 ))}
           <div className='flex items-center space-x-4 mt-4'>
             <ModeToggle />
-            {/* <div className=' bg-card-foreground px-6 py-2 dark:bg-card-foreground dark:text-white rounded-full hover:bg-primary-dark shadow-lg transition-transform duration-200 transform hover:scale-105'> */}
-              <Link href="https://www.instagram.com/apeirocraft/" target="_blank" ><InstagramLogoIcon className='dark:bg-white bg-black'/></Link>
-            {/* </div> */}
+            <Button className=' bg-foreground dark:bg-teal-500 px-6 py-2 dark:text-white rounded-full hover:bg-primary-dark shadow-lg transition-transform duration-200 transform hover:scale-105'>
+              <Link href="https://www.instagram.com/apeirocraft/" target="_blank" ><InstagramLogoIcon /></Link>
+            </Button>
           </div>
         </div>
       )}
