@@ -1,10 +1,17 @@
 import HeroSection from "./components/HeroSection";
-import { Benefits } from "./components/Benefits";
+import Benefits from "./components/Benefits";
+import { Features } from "./components/Features";
+import { Services } from "./components/Services";
+import Dev from "./components/our-origin";
+
 export default function Home() {
   return (
-    <div className="flex-row w-full h-full  mx-0 my-0 px-0 py-0">
+    <div className="flex-row w-full h-full max-w-max max-h-max items-center justify-between md:p-12 mx-0 my-0 ">
      <HeroSection/> 
      <Benefits/>
+     <Features/>
+     <Services/>
+     <Dev/>
     </div>
         
     
