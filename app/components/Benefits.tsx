@@ -2,7 +2,7 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
-import Icon from "@/components/ui/icon"
+
 interface BenefitsProps {
 
   title: string;
@@ -38,7 +38,7 @@ const benefitList: BenefitsProps[] = [
 
 export const Benefits = () => {
   return (
-    <section id="benefits" className="container mx-auto my-auto  py-24 sm:py-32">
+    <section id="benefits" className="container  p-auto m-auto py-24 sm:py-32">
       <div className="grid lg:grid-cols-2 place-items-center lg:gap-24">
         <div>
           <h2 className="text-lg text-primary mb-2 tracking-wider">Benefits</h2>
