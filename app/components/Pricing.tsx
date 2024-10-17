@@ -1,8 +1,9 @@
 import React from 'react'
 
+
 const Pricing = () => {
   return (
-    <section id="features" className="container  py-24 sm:py-32">
+    <section id="pricing" className="container   py-24 sm:py-32">
       <h2 className="text-lg text-primary text-center mb-2 tracking-wider">
         Pricing
       </h2>
@@ -16,6 +17,7 @@ const Pricing = () => {
         fugiat, odit similique quasi sint reiciendis quidem iure veritatis optio
         facere tenetur.
       </h3>
+     
       
     </section>
   )
