@@ -3,6 +3,7 @@ import Benefits from "./components/Benefits";
 import { Features } from "./components/Features";
 import { Services } from "./components/Services";
 import Dev from "./components/our-origin";
+import Pricing from "./components/Pricing";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
      <Features/>
      <Services/>
      <Dev/>
+     <Pricing/>
     </div>
         
     
