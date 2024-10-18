@@ -7,7 +7,7 @@ import Pricing from "./components/Pricing";
 
 export default function Home() {
   return (
-    <div className="flex-row w-full h-full max-w-max max-h-max items-center justify-between md:p-12 mx-0 my-0 ">
+    <div className="flex-row w-full  -space-y-2 h-full max-w-max max-h-max items-center justify-between md:p-12 mx-0 my-0 ">
      <HeroSection/> 
      <Benefits/>
      <Features/>
