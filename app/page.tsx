@@ -4,6 +4,9 @@ import { Features } from "./components/Features";
 import { Services } from "./components/Services";
 import Dev from "./components/our-origin";
 import Pricing from "./components/Pricing";
+import { Contact } from "./components/Contact";
+import FAQ from "./components/FAQ";
+import { Footer } from "./components/Footer";
 
 export default function Home() {
   return (
@@ -14,6 +17,9 @@ export default function Home() {
      <Services/>
      <Dev/>
      <Pricing/>
+     <FAQ/>
+     <Contact/>
+     <Footer/>
     </div>
         
     
