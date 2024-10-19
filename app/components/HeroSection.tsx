@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button"
-import img from "../../public/img.jpg";
+import img from "../../public/img.webp";
 import Image from 'next/image';
 
 const HeroSection = () => {
@@ -12,11 +12,11 @@ const HeroSection = () => {
           </span>
         </span>
 
-        <h1 className="text-4xl md:text-6xl font-bold text-center md:text-left">
-          Experience The AperioCraft{"'s"}
+        <h1 className="text-4xl md:text-6xl font-bold text-center md:text-between">
+        Experience <span className='text-transparent pl-2 bg-gradient-to-r from-purple-500 to-purple-900 tanslate-x-2 duration-200  bg-clip-text '>ApeiroCraft</span> Limitless Possibilities
         </h1>
-        <p className="text-center md:text-left w-full md:w-[750px] text-sm md:text-xl text-muted-foreground">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam aut debitis, quos accusantium architecto consequuntur commodi tenetur maiores natus sapiente minima at odio modi laboriosam! Exercitationem quia in perspiciatis nostrum.
+        <p className="text-center md:text-between w-full md:w-[750px]   text-sm md:text-xl text-muted-foreground">
+Unlock your business{"'s"} full potential with ApeiroCraft. We create custom digital solutions designed to drive growth, efficiency, and success. Let’s build the future together!
         </p>
 
         <div className="flex justify-center md:justify-start space-x-4">
@@ -32,8 +32,8 @@ const HeroSection = () => {
         </div>
       </div>
 
-      <div className=" translate-x-2 -translate-y-2 w-1/1.5  pb-[100px]   md:w-1/1.5  pt-6  md:mt-0">
-        <Image src={img} height={100} width={1200} className=" w-fit h-fit  rounded-lg border  border-t-3 border-t-purple-300  shadow-amber-100 " alt="gg" />
+      <div className=" translate-x-2 -translate-y-2 w-full items-center  pb-[1000px] pl-[390px]   md:w-full  pt-6  md:mt-0">
+        <Image src={img} height={10000} width={12000} className=" w-full h-full  rounded-lg border  border-t-3 border-t-purple-300  shadow-amber-100 " alt="gg" />
       </div>
     </div>
   );
