@@ -32,8 +32,8 @@ Unlock your business{"'s"} full potential with ApeiroCraft. We create custom dig
         </div>
       </div>
 
-      <div className=" translate-x-2 -translate-y-2 w-full items-center  pb-[1000px] pl-[390px]   md:w-full  pt-6  md:mt-0">
-        <Image src={img} height={10000} width={12000} className=" w-full h-full  rounded-lg border  border-t-3 border-t-purple-300  shadow-amber-100 " alt="gg" />
+      <div className=" translate-x-2 -translate-y-2  items-start  pb-auto pl-auto    md:w-full   pt-6  md:mt-0">
+        <Image src={img} height={10000} width={12000} className=" w-full h-full  rounded-lg border  border-t-12 border-t-primary  shadow-amber-900 " alt="gg" />
       </div>
     </div>
   );
