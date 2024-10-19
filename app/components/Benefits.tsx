@@ -8,28 +8,24 @@ interface BenefitsProps {
 
 const benefitList: BenefitsProps[] = [
   {
-
-    title: "Build Brand Trust",
+    title: "Unmatched Custom Solutions",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. A odio velit cum aliquam. Natus consectetur dolores.",
+      "Gain access to exclusive, tailor-made digital solutions that give your business a competitive advantage. Stand out and succeed where others can’t.",
   },
   {
-
-    title: "More Leads",
+    title: "Instant Results, Zero Hassle",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. A odio velit cum aliquam, natus consectetur.",
+      "Watch your business transform with seamless, effortless integration. No downtime, no disruptions—just fast results that push you ahead of the competition.",
   },
   {
-
-    title: "Higher Conversions",
+    title: "Exponential Business Growth",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus consectetur. A odio velit cum aliquam",
+      "Unlock the potential for rapid growth with tools designed to multiply your customer base and increase revenue faster than ever before.",
   },
   {
-
-    title: "Test Marketing Ideas",
+    title: "Premium 24/7 VIP Support",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. A odio velit cum aliquam. Natus consectetur dolores.",
+      "Enjoy priority, around-the-clock support from our expert team. We ensure your business keeps running smoothly so you can focus on scaling without limits.",
   },
 ];
 
@@ -43,12 +39,12 @@ const Benefits = () => {
         <h2 className="text-lg text-primary mb-2 tracking-wider">Benefits</h2>
 
         <h2 className="text-3xl md:text-4xl font-bold mb-4">
-          Your Shortcut to Success
+        Unlock Your Business Potential
         </h2>
-        <p className="text-xl text-muted-foreground mb-8">
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Non
-          ducimus reprehenderit architecto rerum similique facere odit
-          deleniti necessitatibus quo quae.
+        <p className="text-xl text-justify   text-muted-foreground mb-8">
+        ApeiroCraft provides cutting-edge digital solutions tailored to transform your business. Whether it{"'s"} dynamic websites or powerful SaaS tools, we empower you to scale faster and more efficiently. Leave the tech to us—so you can focus on taking your business to new heights.
+
+
         </p>
       </div>
 
