@@ -36,7 +36,6 @@ export default function oRotLayout({
           disableTransitionOnChange
         >
           <Navbar />
-
           {children}
         </ThemeProvider>
       </body>
