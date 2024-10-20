@@ -14,32 +14,28 @@ import {
   
   const FAQList: FAQProps[] = [
     {
-      question: "Is this template free?",
-      answer: "Yes. It is a free NextJS Shadcn template.",
+      question: "What unique services do you provide?",
+      answer: "We specialize in web development, SaaS solutions, a content agency, and social media management, designed to elevate your brand.",
       value: "item-1",
     },
     {
-      question: "Duis aute irure dolor in reprehenderit in voluptate velit?",
-      answer:
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint labore quidem quam consectetur sapiente, iste rerum reiciendis animi nihil nostrum sit quo, modi quod.",
+      question: "What is the cost of web development?",
+      answer: "Our tailored web development starts at $3,500 as a one-time investment to create a powerful online presence.",
       value: "item-2",
     },
     {
-      question:
-        "Lorem ipsum dolor sit amet Consectetur natus dolor minus quibusdam?",
-      answer:
-        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore qui nostrum reiciendis veritatis.",
+      question: "Is there a monthly maintenance fee?",
+      answer: "Yes, our maintenance service is available at $800 per month, ensuring your site remains optimized and up-to-date.",
       value: "item-3",
     },
     {
-      question: "Excepteur sint occaecat cupidata non proident sunt?",
-      answer: "Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+      question: "What does your content agency offer?",
+      answer: "Our content agency excels in creating compelling content, editing, and graphic design to boost your engagement and visibility.",
       value: "item-4",
     },
     {
-      question:
-        "Enim ad minim veniam, quis nostrud exercitation ullamco laboris?",
-      answer: "consectetur adipisicing elit. Sint labore.",
+      question: "How can your SaaS service benefit me?",
+      answer: "Our AI-integrated SaaS solutions provide versatility across multiple niches, streamlining your operations and enhancing efficiency.",
       value: "item-5",
     },
   ];
@@ -61,11 +57,11 @@ const FAQ = () => {
     <Accordion type="single" collapsible className="AccordionRoot">
       {FAQList.map(({ question, answer, value }) => (
         <AccordionItem key={value} value={value}>
-          <AccordionTrigger className="text-left">
+          <AccordionTrigger className="text-left text-thin text-2xl">
             {question}
           </AccordionTrigger>
 
-          <AccordionContent>{answer}</AccordionContent>
+          <AccordionContent className='text-xl'>{answer}</AccordionContent>
         </AccordionItem>
       ))}
     </Accordion>

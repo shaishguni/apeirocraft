@@ -6,11 +6,11 @@ import Dev from "./components/our-origin";
 import Pricing from "./components/Pricing";
 import { Contact } from "./components/Contact";
 import FAQ from "./components/FAQ";
-import { Footer } from "./components/Footer";
+
 
 export default function Home() {
   return (
-    <div className="flex-row w-full  space-y-12 h-full max-w-max max-h-max items-center justify-between md:p-12 mx-0 my-0 ">
+    <div className="flex-row   space-y-12 h-fullitems-center justify-between md:p-12 mx-0 my-0 ">
      <HeroSection/> 
      <Benefits/>
      <Features/>
@@ -19,7 +19,7 @@ export default function Home() {
      <Pricing/>
      <FAQ/>
      <Contact/>
-     <Footer/>
+
     </div>
         
     

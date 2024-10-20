@@ -27,6 +27,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
+import { Footer } from "./Footer";
 
 const formSchema = z.object({
   firstName: z.string().min(2).max(255),
@@ -43,7 +44,7 @@ export const Contact = () => {
       firstName: "",
       lastName: "",
       email: "",
-      subject: "Web Development",
+      subject: "",
       message: "",
     },
   });
@@ -55,13 +56,15 @@ export const Contact = () => {
     const mailToLink = `mailto:gunishaish@gmail.com?subject=${subject}&body=Hello I am ${firstName} ${lastName}, my Email is ${email}. %0D%0A${message}`;
 
     window.location.href = mailToLink;
+    alert("Thank You for the query");
+    new window.WebTransportBidirectionalStream()
   }
 
   return (
-    <section id="contact" className="container py-24 sm:py-32">
-      <section className="grid grid-cols-1       md:grid-cols-2 gap-8">
+    <section id="contact" className="container relative  py-24 sm:py-32">
+      <section className="grid grid-cols-2     md:grid-cols-2 gap-8">
         <div>
-          <div className="mb-4">
+          <div className="mb-4 ">
             <h2 className="text-lg text-primary mb-2 tracking-wider">
               Contact
             </h2>
@@ -69,8 +72,9 @@ export const Contact = () => {
             <h2 className="text-3xl md:text-4xl font-bold">Connect With Us</h2>
           </div>
           <p className="mb-8 text-muted-foreground lg:w-5/6">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum
-            ipsam sint enim exercitationem ex autem corrupti quas tenetur
+          We value your inquiries and look forward to collaborating with you. Please feel free to reach out with any questions, feedback, or service requests. Our dedicated team is here to provide you with the support you need to succeed. Let’s embark on this journey together!
+
+
           </p>
 
           <div className="flex flex-col gap-4">
@@ -80,17 +84,17 @@ export const Contact = () => {
                 <div className="font-bold">Find us</div>
               </div>
 
-              <div>742 Evergreen Terrace, Springfield, IL 62704</div>
-            </div>
+              <div>Kathmandu,Nepal</div>
+            </div> 
 
-            <div>
+             <div>
               <div className="flex gap-2 mb-1">
                 <Phone />
                 <div className="font-bold">Call us</div>
               </div>
 
-              <div>+1 (619) 123-4567</div>
-            </div>
+              <div>+977 9851150000</div>
+            </div> 
 
             <div>
               <div className="flex gap-2 mb-1">
@@ -98,21 +102,23 @@ export const Contact = () => {
                 <div className="font-bold">Mail US</div>
               </div>
 
-              <div>leomirandadev@gmail.com</div>
+              <div>gunishaish@gmail.com</div>
             </div>
 
             <div>
               <div className="flex gap-2">
                 <Clock />
-                <div className="font-bold">Visit us</div>
+                <div className="font-bold">We{"'re"} Available for Meeting</div>
               </div>
 
-              <div>
-                <div>Monday - Friday</div>
-                <div>8AM - 4PM</div>
+              <div >
+                <div >Monday - Thursday</div>
+                <div>5PM - 9PM</div>
+                <div>Friday - Saturday</div>
+                <div>9AM - 10PM</div>
               </div>
             </div>
-          </div>
+          </div> 
         </div>
 
         <Card className="bg-muted/60 dark:bg-card">
@@ -131,7 +137,7 @@ export const Contact = () => {
                       <FormItem className="w-full">
                         <FormLabel>First Name</FormLabel>
                         <FormControl>
-                          <Input placeholder="Leopoldo" {...field} />
+                          <Input placeholder="" {...field} />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -144,7 +150,7 @@ export const Contact = () => {
                       <FormItem className="w-full">
                         <FormLabel>Last Name</FormLabel>
                         <FormControl>
-                          <Input placeholder="Miranda" {...field} />
+                          <Input placeholder="" {...field} />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -162,7 +168,7 @@ export const Contact = () => {
                         <FormControl>
                           <Input
                             type="email"
-                            placeholder="leomirandadev@gmail.com"
+                            placeholder=""
                             {...field}
                           />
                         </FormControl>
@@ -189,19 +195,18 @@ export const Contact = () => {
                             </SelectTrigger>
                           </FormControl>
                           <SelectContent>
+                          
                             <SelectItem value="Web Development">
                               Web Development
                             </SelectItem>
-                            <SelectItem value="Mobile Development">
-                              Mobile Development
+                            <SelectItem value="Content Creation">
+                              Content Creation
                             </SelectItem>
-                            <SelectItem value="Figma Design">
-                              Figma Design
+                            <SelectItem value="SMMA">
+                              SMMA
                             </SelectItem>
-                            <SelectItem value="REST API">REST API</SelectItem>
-                            <SelectItem value="FullStack Project">
-                              FullStack Project
-                            </SelectItem>
+                            <SelectItem value="SAAS">SAAS</SelectItem>
+                           
                           </SelectContent>
                         </Select>
                         <FormMessage />
@@ -237,9 +242,14 @@ export const Contact = () => {
             </Form>
           </CardContent>
 
-          <CardFooter></CardFooter>
+          <CardFooter>
+
+          </CardFooter>
         </Card>
       </section>
+      <CardFooter>
+        <Footer/>
+</CardFooter>
     </section>
   );
 };
