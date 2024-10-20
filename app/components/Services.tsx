@@ -7,34 +7,35 @@ interface ServiceProps {
   title: string;
   description: string;
 }
-
 const ServiceList: ServiceProps[] = [
   {
-    icon: "TabletSmartphone",
-    title: "Mobile Friendly",
+    icon: "Code",
+    title: "Web Development",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. A odio velit cum aliquam, consectetur.",
+    "We specialize in web development tailored for niches like real estate, e-commerce, and healthcare. Our custom websites drive conversions and are designed for scalability, ensuring your business grows in a competitive digital landscape."
+  
   },
   {
-    icon: "BadgeCheck",
-    title: "Social Proof",
+    icon: "Cloud",
+    title: "SaaS Solutions",
     description:
-      "Lorem ipsum dolor sit amet consectetur. Natus consectetur, odio ea accusamus aperiam.",
+    "Our SaaS solutions cater to multiple niches, providing customizable tools for businesses in real estate, healthcare, education, and more. Integrated with AI and machine learning, our platforms enhance efficiency, automate processes, and deliver data-driven insights to help you scale effortlessly."
+  
   },
   {
-    icon: "Goal",
-    title: "Targeted Content",
+    icon: "Pen",
+    title: "Content Agency",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. odio ea accusamus aperiam.",
+    "Our Content Agency specializes in editing, graphic design, and content creation, providing the visual and written assets needed to support your SMMA efforts and engage your audience effectively.",
   },
   {
-    icon: "PictureInPicture",
-    title: "Strong Visuals",
+    icon: "Megaphone",
+    title: "Social Media Marketing Agency (SMMA)",
     description:
-      "Lorem elit. A odio velit cum aliquam. Natus consectetur dolores, odio ea accusamus aperiam.",
+      "Our SMMA services help you build a strong online presence through targeted social media strategies, enhancing brand awareness and driving customer engagement.",
   },
- 
-];
+]
+
 
 export const Services = () => {
   return (
@@ -44,13 +45,11 @@ export const Services = () => {
       </h2>
 
       <h2 className="text-3xl md:text-4xl text-center font-bold mb-4">
-        Grow Your Business
+      Accelerate Your Growth
       </h2>
 
       <h3 className="md:w-1/2 mx-auto text-xl text-center text-muted-foreground mb-8">
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem
-        fugiat, odit similique quasi sint reiciendis quidem iure veritatis optio
-        facere tenetur.
+      At ApeiroCraft, we believe that every business deserves personalized support to thrive. Our expert team is dedicated to understanding your unique challenges and delivering tailored solutions that drive results.6
       </h3>
 
       <div className="grid sm:grid-cols-1 lg:grid-cols-2 gap-4">

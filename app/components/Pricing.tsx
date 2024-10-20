@@ -18,56 +18,58 @@ enum PopularPlan {
 interface PlanProps {
   title: string;
   popular: PopularPlan;
-  price: number;
+  price: string;
+  duration:string;
   description: string;
+  note:string;
   buttonText: string;
   benefitList: string[];
 }
 
 const plans: PlanProps[] = [
   {
-    title: "Free",
+    title: "Basic Web Development Package",
     popular: 0,
-    price: 0,
-    description:
-      "Lorem ipsum dolor sit, amet ipsum consectetur adipisicing elit.",
-    buttonText: "Start Free Trial",
+    price: '3500', // One-time fee
+    duration:"One-Time",
+    description: "Launch your niche-focused website with essential features. Ideal for startups looking to establish an online presence.",
+    note:"",
+    buttonText: "Get Started",
     benefitList: [
-      "1 team member",
-      "1 GB storage",
-      "Upto 2 pages",
-      "Community support",
-      "AI assistance",
+      "Custom design tailored to your niche",
+      "Responsive & mobile-friendly",
+      "SEO-optimized for increased visibility",
+      "1-month post-launch support",
     ],
   },
   {
-    title: "Premium",
+    title: "Enhanced Digital Presence Package",
     popular: 1,
-    price: 45,
-    description:
-      "Lorem ipsum dolor sit, amet ipsum consectetur adipisicing elit.",
-    buttonText: "Get starterd",
+    price: '1400', // Recurring fee
+    duration:"mo",
+    description: "Combine web development with strategic social media management and content creation to maximize engagement.",
+    note:"To ensure the best fit for your project, we separate the web development fee.",
+    buttonText: "Upgrade Now",
     benefitList: [
-      "4 team member",
-      "8 GB storage",
-      "Upto 6 pages",
-      "Priority support",
-      "AI assistance",
+      "Includes all basic features",
+      "Tailored content creation",
+      "Strategic social media planning",
+      "Monthly performance reports",
     ],
   },
   {
-    title: "Enterprise",
+    title: "Ultimate Growth Package",
     popular: 0,
-    price: 120,
-    description:
-      "Lorem ipsum dolor sit, amet ipsum consectetur adipisicing elit.",
-    buttonText: "Contact US",
+    price: '5000',
+     // Recurring fee
+     duration:"mo",
+    description: "All-inclusive package for businesses aiming for rapid growth with advanced SaaS tools and dedicated support.Web development fee is not included.",
+    note:"To ensure the best fit for your project, we separate the web development fee.",
+    buttonText: "Contact Us",
     benefitList: [
-      "10 team member",
-      "20 GB storage",
-      "Upto 10 pages",
-      "Phone & email support",
-      "AI assistance",
+      "All features from previous packages",
+      "Advanced SaaS tools with AI integration",
+      "24/7 support and consultation",
     ],
   },
 ];
@@ -82,16 +84,16 @@ const Pricing = () => {
     </h2>
 
     <h2 className="text-3xl md:text-4xl text-center font-bold mb-4">
-      Get unlimitted access
+    Unlimited Access Awaits
     </h2>
 
     <h3 className="md:w-1/2 mx-auto text-xl text-center text-muted-foreground pb-14">
-      Lorem ipsum dolor sit amet consectetur adipisicing reiciendis.
+    Gain unlimited access to all our services and elevate your business. Experience seamless solutions tailored to your needs—start your journey with us today!
     </h3>
 
     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-4">
       {plans.map(
-        ({ title, popular, price, description, buttonText, benefitList }) => (
+        ({ title, popular, price,duration, description, note,buttonText, benefitList }) => (
           <Card
             key={title}
             className={
@@ -105,11 +107,13 @@ const Pricing = () => {
 
               <CardDescription className="pb-4">
                 {description}
+                <br />
+                <span className='font-normal  text-black '>{note}</span>
               </CardDescription>
 
               <div>
                 <span className="text-3xl font-bold">${price}</span>
-                <span className="text-muted-foreground"> /month</span>
+                <span className="text-muted-foreground"> /{duration}</span>
               </div>
             </CardHeader>
 
