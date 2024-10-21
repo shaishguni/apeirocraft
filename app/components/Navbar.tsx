@@ -101,7 +101,7 @@ const Navbar = () => {
         <NavigationMenuList>
           <NavigationMenuItem>
             <NavigationMenuTrigger className=" text-base">
-              Products
+              <Link href="#products">Products</Link>
             </NavigationMenuTrigger>
             <NavigationMenuContent>
               <div className="grid w-[600px] grid-cols-2 gap-5 p-4">
