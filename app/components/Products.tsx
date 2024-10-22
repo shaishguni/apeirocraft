@@ -82,8 +82,10 @@ const Products = () => {
                 </AlertDialogHeader>
                 <AlertDialogFooter> 
                   <AlertDialogCancel>Cancel</AlertDialogCancel>
-                  <AlertDialogCancel><Link href="#pricing">Continue To Pricing</Link> </AlertDialogCancel>
-                 
+                   <AlertDialogAction>
+                   <Link href="#pricing">Continue To Pricing</Link>
+
+                 </AlertDialogAction>
                 </AlertDialogFooter>
               </AlertDialogContent>
             </AlertDialog>
