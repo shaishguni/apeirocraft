@@ -28,7 +28,7 @@ export default function oRotLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" >
       <body 
         className={`${geistSans.variable} ${geistMono.variable} antialiased  w-full h-full    dark:text-white  dark:bg-background px-4 py-6 sm:px-6 lg:px-8`}
       >

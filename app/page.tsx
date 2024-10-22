@@ -1,4 +1,4 @@
-import HeroSection from "./components/HeroSection";
+import { HeroSection } from "./components/HeroSection";
 import Benefits from "./components/Benefits";
 import { Features } from "./components/Features";
 import { Services } from "./components/Services";
