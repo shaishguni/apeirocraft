@@ -39,7 +39,7 @@ const ServiceList: ServiceProps[] = [
 
 export const Services = () => {
   return (
-    <section id="features" className="container  py-24 sm:py-32">
+    <section id="products" className="container  py-24 sm:py-32">
       <h2 className="text-lg text-primary text-center mb-2 tracking-wider">
         Services
       </h2>
@@ -49,7 +49,7 @@ export const Services = () => {
       </h2>
 
       <h3 className="md:w-1/2 mx-auto text-xl text-center text-muted-foreground mb-8">
-      At ApeiroCraft, we believe that every business deserves personalized support to thrive. Our expert team is dedicated to understanding your unique challenges and delivering tailored solutions that drive results.6
+      From niche web development to AI-powered SaaS, our products are built to elevate your business. Streamline operations, grow your brand, and experience seamless success with our tailored solutions. Let{"'s"} get started today!
       </h3>
 
       <div className="grid sm:grid-cols-1 lg:grid-cols-2 gap-4">

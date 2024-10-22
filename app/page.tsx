@@ -6,7 +6,7 @@ import Dev from "./components/our-origin";
 import Pricing from "./components/Pricing";
 import { Contact } from "./components/Contact";
 import FAQ from "./components/FAQ";
-import Products from "./components/Products";
+// import Products from "./components/Products"; 
 
 
 export default function Home() {
@@ -17,7 +17,7 @@ export default function Home() {
      <Features/>
      <Services/>
      
-     <Products/>
+     {/* <Products/> */}
      <Pricing/>
      <Dev/>
      <FAQ/>
