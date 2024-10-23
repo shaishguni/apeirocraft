@@ -74,13 +74,13 @@ export const HeroSection = () => {
           </div>
 
           <p className="max-w-screen-sm mx-auto text-xl text-muted-foreground">
-            {`We're more than just a tool, we're a community of passionate
-            creators. Get access to exclusive resources, tutorials, and support.`}
+          Unlock your business{"'s"} full potential with ApeiroCraft. We create custom digital solutions designed to drive growth, efficiency, and success. Let’s build the future together!
           </p>
 
           <div className="space-y-4 md:space-y-0 md:space-x-4">
             <Button className="w-5/6 md:w-1/4 font-bold group/arrow">
-              Get Started
+              <Link href="#pricing">Get Started</Link>
+              
               <ArrowRight className="size-5 ml-2 group-hover/arrow:translate-x-1 transition-transform" />
             </Button>
 
@@ -90,7 +90,7 @@ export const HeroSection = () => {
               className="w-5/6 md:w-1/4 font-bold"
             >
               <Link
-                href="#services"
+                href="#products"
                 // target="_blank"
               >
                 Learn More
