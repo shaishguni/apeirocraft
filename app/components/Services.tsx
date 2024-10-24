@@ -17,9 +17,9 @@ const ServiceList: ServiceProps[] = [
   },
   {
     icon: "Cloud",
-    title: "SaaS Solutions",
+    title: "Website Maintenance",
     description:
-    "Our SaaS solutions cater to multiple niches, providing customizable tools for businesses in real estate, healthcare, education, and more. Integrated with AI and machine learning, our platforms enhance efficiency, automate processes, and deliver data-driven insights to help you scale effortlessly."
+    "Our Web Maintenance Service ensures your website stays updated, secure, and optimized. We handle everything from regular updates, performance enhancements, and security monitoring to backups and bug fixes. This service guarantees your site runs smoothly, with improved speed, uptime, and protection against vulnerabilities, allowing your business to operate seamlessly."
   
   },
   {
@@ -69,7 +69,7 @@ export const Services = () => {
                 <CardTitle>{title}</CardTitle>
               </CardHeader>
 
-              <CardContent className="text-muted-foreground w-fit justify-center text-center">
+              <CardContent className="text-muted-foreground w-fit justify-center text-justify">
                 {description}
               </CardContent>
             </Card>

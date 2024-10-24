@@ -31,7 +31,7 @@ const plans: PlanProps[] = [
   {
     title: "Basic Web Development Package",
     popular: 0,
-    price: '3500', // One-time fee
+    price: '4000', // One-time fee
     duration:"One-Time",
     description: "Launch your niche-focused website with essential features. Ideal for startups looking to establish an online presence.",
     note:"",
@@ -46,7 +46,7 @@ const plans: PlanProps[] = [
   {
     title: "Enhanced Digital Presence Package",
     popular: 1,
-    price: '1400', // Recurring fee
+    price: '2500', // Recurring fee
     duration:"mo",
     description: "Combine web development with strategic social media management and content creation to maximize engagement.",
     note:"To ensure the best fit for your project, we separate the web development fee.",
@@ -61,15 +61,17 @@ const plans: PlanProps[] = [
   {
     title: "Ultimate Growth Package",
     popular: 0,
-    price: '5000',
+    price: '3000',
      // Recurring fee
      duration:"mo",
-    description: "All-inclusive package for businesses aiming for rapid growth with advanced SaaS tools and dedicated support.Web development fee is not included.",
+    description: "All-inclusive package for businesses aiming for rapid growth with comprehensive web maintenance and dedicated support.",
     note:"To ensure the best fit for your project, we separate the web development fee.",
     buttonText: "Contact Us",
     benefitList: [
       "All features from previous packages",
-      "Advanced SaaS tools with AI integration",
+
+      'Comprehensive web maintenance, content creation, and SMMA services',
+      "Advanced business solutions tailored for your growth strategy",
       "24/7 support and consultation",
     ],
   },

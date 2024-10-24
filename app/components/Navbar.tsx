@@ -77,7 +77,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className='border-black shadow-inner    dark:text-white bg-white dark:bg-black  text-black  top-5  sticky border border-secondary z-40 rounded-2xl  flex-1  mt-2 p-4 m-4 space-y-2 bg-transparent w-[90%] md:w-[70%] lg:w-[75%] lg:max-w-screen-lg mx-4 lg:mx-0 flex justify-between items-center    lg:ml-48 transition-all duration-300'>
+    <div className='border-black shadow-inner  text-lg  dark:text-white bg-white dark:bg-black  text-black  top-5  sticky border border-secondary z-40 rounded-2xl  flex-1  mt-2 p-4 m-4 space-y-2 bg-transparent w-[90%] md:w-[70%] lg:w-[75%] lg:max-w-screen-lg mx-4 lg:mx-0 flex justify-between items-center    lg:ml-48 transition-all duration-300'>
       <nav className='flex justify-between items-center w-full'>
         {/* Logo Section (Left) */}
         <section className='flex items-center space-x-3'>
@@ -100,8 +100,8 @@ const Navbar = () => {
         <NavigationMenu className="hidden  lg:block mx-auto">
         <NavigationMenuList>
           <NavigationMenuItem>
-            <NavigationMenuTrigger className=" text-base">
-              <Link href="#products">Products</Link>
+            <NavigationMenuTrigger className=" text-lg">
+              <Link href="#products" className='text-lg'>Products</Link>
             </NavigationMenuTrigger>
             <NavigationMenuContent>
               <div className="grid w-[600px] grid-cols-2 gap-5 p-4">

@@ -3,7 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import { ThemeProvider } from "./components/ui/theme-provider";
-
+import { Analytics } from '@vercel/analytics/react';
 
 
 const geistSans = localFont({
@@ -40,6 +40,7 @@ export default function oRotLayout({
         >
           <Navbar />
           {children}
+          <Analytics/>
 
         </ThemeProvider>
       </body>
