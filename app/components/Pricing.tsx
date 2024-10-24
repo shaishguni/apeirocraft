@@ -9,6 +9,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Check } from "lucide-react";
+import Link from 'next/link';
 
 enum PopularPlan {
   NO = 0,
@@ -135,7 +136,8 @@ const Pricing = () => {
                 }
                 className="w-full"
               >
-                {buttonText}
+                <Link target='_blank' href="https://calendly.com/gunishaish/free-website-consultation-with-apeirocraft">{buttonText}</Link>
+                
               </Button>
             </CardFooter>
           </Card>
