@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "./components/Navbar";
 import { ThemeProvider } from "./components/ui/theme-provider";
 import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 
 const geistSans = localFont({
@@ -41,6 +42,7 @@ export default function oRotLayout({
           <Navbar />
           {children}
           <Analytics/>
+          <SpeedInsights />
 
         </ThemeProvider>
       </body>
