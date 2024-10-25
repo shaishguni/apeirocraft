@@ -7,6 +7,7 @@ import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 
 
+
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -20,7 +21,29 @@ const geistMono = localFont({
 
 export const metadata: Metadata = {
   title: "ApeiroCraft",
-  description: "Embark on a Digital Odyssey with  ApeiroCraft",
+  description: "Boost your brand with expert web development, social media mastery, and AI-powered SaaS for unstoppable growth!",
+  metadataBase: new URL("http://apeirocraft.tech/"),
+  keywords : [
+    "ApeiroCraft",
+    "Tech-driven solutions",
+    "Digital hub for businesses",
+    "AI-powered SaaS",
+    "Custom website development",
+    "Professional web design",
+    "E-commerce web development",
+    "Real estate websites",
+    "Website creation services",
+    "Social media management agency",
+    "Content creation services",
+    "Graphic design for social media",
+    "Social media marketing for brands",
+    "Editing and content services",
+    "Niche-specific SaaS",
+    "AI solutions for small businesses",
+    "SaaS for real estate and gyms",
+    "Automated social media SaaS",
+    "AI-driven project management tools",
+],
 };
 
 export default function oRotLayout({
