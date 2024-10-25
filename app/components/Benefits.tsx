@@ -52,20 +52,20 @@ const Benefits = () => {
         {benefitList.map(({ title, description }, index) => (
           <Card
             key={title}
-            className="bg-muted/50 dark:bg-card hover:bg-background transition-all delay-75 group/number"
+            className="bg-white dark:bg-card hover:bg-background transition-all delay-75 group/number"
           >
             <CardHeader>
               <div className="flex justify-between">
               
-                <span className="text-5xl text-muted-foreground/15 font-medium transition-all delay-75 group-hover/number:text-muted-foreground/30">
+                <span className="text-5xl text- font-medium transition-all delay-75 group-hover/number:text-primary">
                   0{index + 1}
                 </span>
               </div>
 
-              <CardTitle>{title}</CardTitle>
+              <CardTitle className="group-hover/number:text-primary">{title}</CardTitle>
             </CardHeader>
 
-            <CardContent className="text-muted-foreground">
+            <CardContent className="group-hover/number:text-primary">
               {description}
             </CardContent>
           </Card>
