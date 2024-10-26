@@ -19,6 +19,7 @@ const geistMono = localFont({
   weight: "100 900", 
 });
 
+
 export const metadata: Metadata = {
   title: "ApeiroCraft",
   description: "Boost your brand with expert web development, social media mastery, and AI-powered SaaS for unstoppable growth!",
