@@ -46,7 +46,6 @@ export const metadata: Metadata = {
     "AI-driven project management tools",
 ],
 };
-
 export default function oRotLayout({
   children,
 }: Readonly<{
