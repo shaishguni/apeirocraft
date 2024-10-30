@@ -1,6 +1,6 @@
-import type { MetadataRoute } from 'next'
+// import type { MetadataRoute } from 'next'
  
-export default function sitemap(): MetadataRoute.Sitemap {
+export default  async function sitemap() {
   return [
     {
       url: 'http://apeirocraft.tech/',
