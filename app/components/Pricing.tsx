@@ -34,7 +34,7 @@ const plans: PlanProps[] = [
     price: '4000', // One-time fee
     duration:"One-Time",
     description: "Launch your niche-focused website with essential features. Ideal for startups looking to establish an online presence.",
-    note:"",
+    note:"To ensure the best fit for your project, we separate the web development fee.",
     buttonText: "Get Started",
     benefitList: [
       "Custom design tailored to your niche",
@@ -108,10 +108,11 @@ const Pricing = () => {
             <CardHeader>
               <CardTitle className="pb-2">{title}</CardTitle>
 
-              <CardDescription className="pb-4">
+              <CardDescription className="pb-2 ">
                 {description}
                 <br />
-                <span className='font-normal  text-black '>{note}</span>
+                <br />
+                <span className='font-normal  text-black dark:text-white'>{note}</span>
               </CardDescription>
 
               <div>
