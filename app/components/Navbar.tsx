@@ -89,8 +89,8 @@ const Navbar = () => {
 
         {/* Mobile Hamburger Menu Icon */}
         <div className='lg:hidden'>
-          <button onClick={() => setIsOpen(!isOpen)} className="text-gray-500 hover:text-gray-700 transition-colors">
-            {isOpen ? <XIcon className="w-4 h-4 ml-6 " /> : <MenuIcon className="w-8   h-8" />}
+          <button  onClick={() => setIsOpen(!isOpen)} className="text-gray-500  hover:text-gray-700 transition-colors">
+            {isOpen ?  <XIcon className="w-4 h-4 ml-6 " /> : <MenuIcon className="w-8   h-8" />}
           </button>
         </div>
 
@@ -101,7 +101,7 @@ const Navbar = () => {
         <NavigationMenuList>
           <NavigationMenuItem>
             <NavigationMenuTrigger className=" text-lg">
-              <Link href="#products" className='text-lg'>Products</Link>
+              <Link href="#products" className='text-lg font-sans font-light'>Products</Link>
             </NavigationMenuTrigger>
             <NavigationMenuContent>
               <div className="grid w-[600px] grid-cols-2 gap-5 p-4">
@@ -116,7 +116,7 @@ const Navbar = () => {
                   {featureList.map(({ title, description }) => (
                     <li
                       key={title}
-                      className="rounded-md p-3 text-sm hover:bg-muted"
+                      className="rounded-md p-3  text-sm hover:bg-muted"
                     >
                       <p className="mb-1 font-semibold leading-none text-foreground">
                         {title}
@@ -134,7 +134,7 @@ const Navbar = () => {
           <NavigationMenuItem>
             {routeList.map(({ href, label }) => (
               <NavigationMenuLink key={href} asChild>
-                <Link href={href} className=" px-2">
+                <Link href={href} className=" px-2 font-sans font-light ">
                   {label}
                 </Link>
               </NavigationMenuLink>
