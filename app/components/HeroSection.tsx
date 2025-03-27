@@ -19,7 +19,8 @@ export const HeroSection = () => {
             <span className="mr-2 rounded-full text-primary">
               <Badge>Enhance</Badge>
             </span>
-            <span> Your Digital Presence! </span>
+            <span >Your Digital Presence! </span>
+             
           </Badge>
 
           <div className="max-w-screen-md mx-auto text-center text-4xl md:text-6xl font-bold">

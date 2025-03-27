@@ -6,12 +6,15 @@ import Dev from "./components/our-origin";
 import Pricing from "./components/Pricing";
 import { Contact } from "./components/Contact";
 import FAQ from "./components/FAQ";
+import Navbar from "./components/Navbar";
 // import Products from "./components/Products"; 
 
 
 export default function Home() {
   return (
     <div className="flex-row   space-y-12 h-fullitems-center justify-between md:p-12 mx-0 my-0 ">
+
+     <Navbar/>
      <HeroSection/> 
      <Benefits/>
      <Features/>
