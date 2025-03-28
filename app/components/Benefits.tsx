@@ -86,7 +86,7 @@ const Benefits = () => {
           </h2>
           
           <p className="text-muted-foreground text-lg">
-            Our premium solutions give you the competitive edge you need to outperform in today's market. Partner with us and experience the difference.
+            Our premium solutions give you the competitive edge you need to outperform in today{"'"}s market. Partner with us and experience the difference.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 pt-4">

@@ -5,9 +5,8 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion"
-import { ChevronDown } from "lucide-react" // Make sure to install lucide-react
-import Link from 'next/link'
 
+import Link from 'next/link'
 interface FAQProps {
   question: string;
   answer: string;

@@ -110,6 +110,7 @@ export const Services = () => {
                       name={icon as keyof typeof icons}
                       size={24}
                       className={hoveredIndex === index ? 'text-primary-foreground' : 'text-primary'}
+                      color=""
                     />
                   </div>
                   <CardTitle className="text-2xl">{title}</CardTitle>
@@ -134,7 +135,7 @@ export const Services = () => {
                 
                 <Button className="w-full group bg-primary hover:bg-primary/90">
                   {ctaText}
-                  <Icon name="ArrowRight" size={16} className="ml-2 group-hover:translate-x-1 transition-transform" />
+                  <Icon  name="ArrowRight" size={16} className="ml-2 group-hover:translate-x-1 transition-transform " color="" />
                 </Button>
               </CardContent>
             </Card>
