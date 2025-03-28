@@ -14,7 +14,7 @@ const Dev = () => {
       </h2>
 
       <h3 className="md:w-1/2 mx-auto text-xl text-center text-muted-foreground mb-8">
-      Join our vibrant Instagram community! Connect, share, and grow with <span className='text-transparent pl-2 bg-gradient-to-r from-purple-500 to-purple-900 tanslate-x-2 duration-200  bg-clip-text '>ApeiroCraft</span>. Click to dive in! 🚀
+      Join our vibrant Instagram community! Connect, share, and grow with <span className='text-transparent pl-2 bg-linear-to-r from-purple-500 to-purple-900 tanslate-x-2 duration-200  bg-clip-text '>ApeiroCraft</span>. Click to dive in! 🚀
       </h3>
       <div className=" w-full h-full
       78  justify-center space-x-6   p-4  flex " >

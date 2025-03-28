@@ -10,9 +10,10 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Check } from "lucide-react";
+import { Check, Sparkles } from "lucide-react";
 import Link from 'next/link';
 import { Badge } from "@/components/ui/badge";
+import { motion } from "framer-motion";
 
 enum PopularPlan {
   NO = 0,
@@ -25,11 +26,12 @@ interface PlanProps {
   price: string;
   duration: string;
   description: string;
-  // note: string;
   buttonText: string;
   benefitList: string[];
   category: string;
 }
+
+
 const plans: PlanProps[] = [
   // Web Development Packages
   {
@@ -243,6 +245,8 @@ const categories = [
   "Combo",
 ];
 
+
+
 const Pricing = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>("Web");
 
@@ -251,92 +255,133 @@ const Pricing = () => {
     : plans;
 
   return (
-    <section id="pricing" className="container py-24 sm:py-32">
-      <h2 className="text-lg text-primary text-center mb-2 tracking-wider">
-        Pricing
-      </h2>
-
-      <h2 className="text-3xl md:text-4xl text-center font-bold mb-4">
-        Unlimited Access Awaits
-      </h2>
-
-      <h3 className="md:w-1/2 mx-auto text-xl text-center text-muted-foreground pb-14">
-        Gain unlimited access to all our services and elevate your business. Experience seamless solutions tailored to your needs—start your journey with us today!
-      </h3>
-
-      <div className="flex justify-center mb-6 space-x-4">
-      <Badge variant="outline" className="text-sm py-2">
-        {categories.map(category => (
-    
-            <Button
-
-            key={category}
-            onClick={() => setSelectedCategory(category)}
-            className={`px-4 m-2 py-2 ${selectedCategory === category ? "bg-primary text-white" : "bg-gray-200 text-black"}`}
-          >
-            {category}
-          </Button>
-
-          
-        ))}
-        {/* <Button
-          onClick={() => setSelectedCategory(null)}
-          className={`px-4 py-2 ${!selectedCategory ? "bg-primary text-white" : "bg-gray-200 text-black"}`}
+    <section id="pricing" className="relative overflow-hidden py-24 sm:py-32">
+      {/* Background elements */}
+      <div className="absolute inset-0 bg-gradient-to-b from-background to-background/80 z-0"></div>
+      <div className="absolute top-0 left-1/2 w-[1000px] h-[1000px] -translate-x-1/2 -translate-y-1/2 bg-primary/5 rounded-full blur-3xl"></div>
+      
+      <div className="container relative z-10">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="text-center space-y-5 mb-20"
         >
-          All
-        </Button> */}
-        </Badge>
-      </div>
+          <Badge className="px-3.5 py-1.5 text-sm font-medium">
+            Pricing Plans
+          </Badge>
 
-      <div className="grid mt-12  md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-4">
-        {filteredPlans.map(({ title, popular, price, duration, description,  buttonText, benefitList }) => (
-          <Card
-            key={title}
-            className={
-              popular === PopularPlan.YES
-                ? "drop-shadow-xl shadow-black/10 dark:shadow-white/10 border-[1.5px] border-primary lg:scale-[1.1]"
-                : ""
-            }
+          <h2 className="text-4xl md:text-5xl font-bold tracking-tight">
+            Invest in Your Business Growth
+          </h2>
+
+          <p className="md:w-2/3 mx-auto text-xl text-muted-foreground">
+            Select a package that aligns with your business goals. Our solutions are designed to deliver maximum ROI and measurable results.
+          </p>
+        </motion.div>
+
+        <div className="flex justify-center mb-16">
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.4, delay: 0.1 }}
+            className="inline-flex p-1.5 bg-muted/80 backdrop-blur-sm rounded-full shadow-lg"
           >
-            <CardHeader>
-              <CardTitle className="pb-2">{title}</CardTitle>
-
-              <CardDescription className="pb-2 ">
-                {description}
-                {/* <br />
-                <br />
-                <span className='font-normal text-black dark:text-white'>{note}</span> */}
-              </CardDescription>
-
-              <div>
-                <span className="text-3xl font-bold">${price}</span>
-                <span className="text-muted-foreground"> /{duration}</span>
-              </div>
-            </CardHeader>
-
-            <CardContent className="flex">
-              <div className="space-y-4">
-                {benefitList.map((benefit) => (
-                  <span key={benefit} className="flex">
-                    <Check className="text-primary mr-2" />
-                    <h3>{benefit}</h3>
-                  </span>
-                ))}
-              </div>
-            </CardContent>
-
-            <CardFooter>
+            {categories.map(category => (
               <Button
-                variant={popular === PopularPlan.YES ? "default" : "secondary"}
-                className="w-full"
+                key={category}
+                onClick={() => setSelectedCategory(category)}
+                variant={selectedCategory === category ? "default" : "ghost"}
+                className={`px-6 py-2 rounded-full font-medium transition-all duration-300 ${
+                  selectedCategory === category ? "shadow-lg" : "hover:bg-background/50"
+                }`}
               >
-                <Link target='_blank' href="https://calendly.com/gunishaish/free-website-consultation-with-apeirocraft">
-                  {buttonText}
-                </Link>
+                {category}
               </Button>
-            </CardFooter>
-          </Card>
-        ))}
+            ))}
+          </motion.div>
+        </div>
+
+        <div className="grid mt-12 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {filteredPlans.map(({ title, popular, price, duration, description, buttonText, benefitList }, index) => (
+            <motion.div
+              key={title}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+            >
+              <Card
+                className={`h-full transition-all duration-300 hover:border-primary/50 ${
+                  popular === PopularPlan.YES
+                    ? "border-primary bg-gradient-to-b from-primary/5 to-background shadow-xl relative"
+                    : "border-muted hover:shadow-lg relative"
+                }`}
+              >
+                {popular === PopularPlan.YES && (
+                  <div className="absolute -top-4 -right-4 rotate-12">
+                    <Badge className="px-3 py-1.5 bg-gradient-to-r from-primary to-primary/80 text-white font-medium shadow-lg flex items-center gap-1">
+                      <Sparkles className="h-3.5 w-3.5" />
+                      Most Popular
+                    </Badge>
+                  </div>
+                )}
+                <CardHeader className="pb-8">
+                  <CardTitle className="text-2xl font-bold pb-3">{title}</CardTitle>
+
+                  <CardDescription className="text-base pb-6">
+                    {description}
+                  </CardDescription>
+
+                  <div className="flex items-baseline">
+                    <span className="text-5xl font-bold">${price}</span>
+                    <span className="ml-2 text-muted-foreground font-medium">/{duration}</span>
+                  </div>
+                </CardHeader>
+
+                <CardContent className="pb-8">
+                  <p className="font-medium text-sm text-muted-foreground mb-4">What's included:</p>
+                  <div className="space-y-4">
+                    {benefitList.map((benefit) => (
+                      <div key={benefit} className="flex items-start group">
+                        <div className="bg-primary/10 p-1 rounded-full mr-3 group-hover:bg-primary/20 transition-colors">
+                          <Check className="text-primary h-4 w-4 shrink-0" />
+                        </div>
+                        <p className="text-sm">{benefit}</p>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+
+                <CardFooter>
+                  <Button
+                    variant={popular === PopularPlan.YES ? "default" : "outline"}
+                    className={`w-full py-6 text-base font-medium ${
+                      popular === PopularPlan.YES 
+                        ? "bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary"
+                        : "hover:border-primary hover:text-primary"
+                    }`}
+                    size="lg"
+                  >
+                    <Link target='_blank' href="https://calendly.com/gunishaish/free-website-consultation-with-apeirocraft" className="w-full">
+                      {buttonText}
+                    </Link>
+                  </Button>
+                </CardFooter>
+              </Card>
+            </motion.div>
+          ))}
+        </div>
+        
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          className="mt-16 text-center"
+        >
+          <p className="text-muted-foreground">
+            Not finding what you need? <Link href="https://calendly.com/gunishaish/free-website-consultation-with-apeirocraft" className="text-primary font-medium underline-offset-4 hover:underline">Schedule a call</Link> for a custom solution.
+          </p>
+        </motion.div>
       </div>
     </section>
   );

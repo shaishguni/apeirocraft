@@ -4,6 +4,7 @@ import "./globals.css";
 import { ThemeProvider } from "./components/ui/theme-provider";
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
+import Navbar from "./components/Navbar";
 
 
 
@@ -56,7 +57,7 @@ export default function RootLayout({
   return (
     <html lang="en" >
       <body 
-        className={`${geistSans.variable} ${geistMono.variable} antialiased  w-full h-full    dark:text-white  dark:bg-background px-4 py-6 sm:px-6 lg:px-8`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased   w-full h-full    dark:text-white  dark:bg-background px-4 py-6 sm:px-6 lg:px-8`}
       >
         <ThemeProvider
           attribute="class"
@@ -64,7 +65,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-
+         
           {children}
           <Analytics/>
           <SpeedInsights />

@@ -1,183 +1,152 @@
-
 'use client'
 
-import React, { useState } from 'react';
-import logo from "../../public/logo.png";
-import Image from 'next/image';       
+import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
-import { ModeToggle } from './ui/ThemeToggle';
-
 import { MenuIcon, XIcon } from '@heroicons/react/outline';
 import { InstagramLogoIcon } from '@radix-ui/react-icons';
-// import {
-//   DropdownMenu,
-//   DropdownMenuContent,
-//   DropdownMenuItem,
-//   DropdownMenuLabel,
-//   DropdownMenuSeparator,
-//   DropdownMenuTrigger,
-// } from "@/components/ui/dropdown-menu"
-  import {
-    NavigationMenu,
-    NavigationMenuContent,
-    NavigationMenuItem,
-    NavigationMenuLink,
-    NavigationMenuList,
-    NavigationMenuTrigger,
-  } from "@/components/ui/navigation-menu"
 import { Button } from '@/components/ui/button';
-  
-
+import { ModeToggle } from './ui/ThemeToggle';
+import { motion, AnimatePresence } from 'framer-motion';
 
 interface RouteProps {
   href: string;
   label: string;
 }
 
-interface FeatureProps {
-  title: string;
-  description: string;
-}
-const featureList : FeatureProps[] = [ 
-
-  {
-    title: "Showcase Your Value ",
-    description: "Highlight how your product solves user problems.",
-  },
-  {
-    title: "Build Trust",
-    description:
-      "Leverages social proof elements to establish trust and credibility.",
-  },
-  {
-    title: "Capture Leads",
-    description:
-      "Make your lead capture form visually appealing and strategically.",
-  },
-];
-
 const routeList: RouteProps[] = [
-
-  {
-    href: "#pricing",
-    label: "Pricing",
-  },
-  {
-    href: "#faq",
-    label: "FAQ",
-  },
-  {
-    href: "#contact",
-    label: "Contact",
-  },
+  { href: "#pricing", label: "Pricing" },
+  { href: "#faq", label: "FAQ" },
+  { href: "#contact", label: "Contact" },
 ];
 
+
+function arr () {
+  alert("The pitch deck is not available yet. Please check back later.")
+
+}
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
-    <div className='border-black shadow-inner  text-lg  dark:text-white bg-white dark:bg-black  text-black  top-5  sticky border border-secondary z-40 rounded-2xl  flex-1  mt-2 p-4 m-4 space-y-2 bg-transparent w-[90%] md:w-[70%] lg:w-[75%] lg:max-w-screen-lg mx-4 lg:mx-0 flex justify-between items-center    lg:ml-48 transition-all duration-300'>
-      <nav className='flex justify-between items-center w-full'>
-        {/* Logo Section (Left) */}
-        <section className='flex items-center space-x-3'>
-          <Image src={logo} width={50} height={50} alt="gg" className='transition-transform duration-300 transform hover:scale-110' />
-          <Link href='/' className='font-extrabold text-2xl tracking-wide  hover:text-purple-500/75 text-transparent  bg-gradient-to-b from-purple-500 to-purple-900 tanslate-x-2 duration-200 bg-clip-text transition-colors'>
+    <header className={`sticky top-0 z-50 ${scrolled ? 'py-4 mt-2 ' : 'py-4'}  transition-all duration-300 backdrop-blur-lg bg-white/80 dark:bg-black/80 shadow-sm`}>
+      <div className="container mx-auto px-6 flex justify-between items-center">
+        {/* Logo Section */}
+        <div className="flex items-center space-x-3">
+          <Image
+            src="/logo.png"
+            width={40}
+            height={40}
+            alt="Logo"
+            className="transition-transform duration-300 transform hover:rotate-3 hover:scale-110"
+          />
+          <Link
+            href="/"
+            className="text-2xl font-bold tracking-wide text-transparent bg-gradient-to-l from-purple-600 via-indigo-500 to-primary bg-clip-text hover:bg-primary transition-all"
+          >
             ApeiroCraft
           </Link>
-        </section>
-
-        {/* Mobile Hamburger Menu Icon */}
-        <div className='lg:hidden'>
-          <button  onClick={() => setIsOpen(!isOpen)} className="text-gray-500  hover:text-gray-700 transition-colors">
-            {isOpen ?  <XIcon className="w-4 h-4 ml-6 " /> : <MenuIcon className="w-8   h-8" />}
-          </button>
         </div>
 
-        {/* Links Section (Center) */}
-        <div className={`hidden lg:flex lg:space-x-8 lg:items-center mx-auto`}>
-          
-        <NavigationMenu className="hidden  lg:block mx-auto">
-        <NavigationMenuList>
-          <NavigationMenuItem>
-            <NavigationMenuTrigger className=" text-lg">
-              <Link href="#products" className='text-lg font-sans font-light'>Products</Link>
-            </NavigationMenuTrigger>
-            <NavigationMenuContent>
-              <div className="grid w-[600px] grid-cols-2 gap-5 p-4">
-              <Image
-                  src={logo}
-                  alt="gg"
-                  className="h-full w-full rounded-md object-cover"
-                  width={600}
-                  height={600}
-                />
-                <ul className="flex flex-col gap-2">
-                  {featureList.map(({ title, description }) => (
-                    <li
-                      key={title}
-                      className="rounded-md p-3  text-sm hover:bg-muted"
-                    >
-                      <p className="mb-1 font-semibold leading-none text-foreground">
-                        {title}
-                      </p>
-                      <p className="line-clamp-2 text-muted-foreground">
-                        {description}
-                      </p>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </NavigationMenuContent>
-          </NavigationMenuItem>
-
-          <NavigationMenuItem>
-            {routeList.map(({ href, label }) => (
-              <NavigationMenuLink key={href} asChild>
-                <Link href={href} className=" px-2 font-sans font-light ">
-                  {label}
-                </Link>
-              </NavigationMenuLink>
-            ))}
-          </NavigationMenuItem>
-        </NavigationMenuList>
-      </NavigationMenu>
-        </div>
-        
-
-        {/* Mode Toggle and Button Section (Right) */}
-        <div className='hidden lg:flex items-center space-x-4'>
-          <ModeToggle />
-          <Button className=' bg-foreground dark:bg-teal-500   px-6 py-2  rounded-full hover:bg-primary-dark shadow-lg transition-transform duration-200 transform hover:scale-105'>
-           <Link href="https://www.instagram.com/apeirocraft/" target="_blank"><InstagramLogoIcon /></Link> 
-          </Button>
-        </div>
-      </nav>
-
-      {/* Mobile Links Section (Centered) */}
-      {isOpen && (
-        <div className='lg:hidden mt-4 flex-1 space-x-6 flex-row   items-center space-y-2'>
-          {/* <Link href="/" className='text-lg text-gray-600 hover:text-primary transition-colors duration-200'>Products</Link> */}
+        {/* Desktop Navigation */}
+        <nav className="hidden lg:flex space-x-6 items-center justify-between">
           {routeList.map(({ href, label }) => (
-                  <Link
-                    key={href}
-                    // onClick={() => setIsOpen(false)}
-                    className=" text-lg text-gray-600 hover:text-primary transition-colors duration-200"
-                    href={href}
-                  >
-                    {label}
-                  </Link>
-                ))}
-          <div className='flex items-center space-x-4 mt-4'>
+            <Link
+              key={href}
+              href={href}
+              className="text-lg font-medium relative px-2 py-1 text-gray-700 dark:text-gray-300 hover:text-purple-500 transition-colors group"
+            >
+              {label}
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-600 to-blue-500 transition-all duration-300 group-hover:w-full"></span>
+            </Link>
+          ))}
+          
+          <Button variant="outline" className="border-2 border-purple-500 text-purple-500 hover:bg-purple-500/10 rounded-full px-6 transition-all">
+          <Link href="/login">Sign In</Link>
+          </Button>
+          
+          <Button className="bg-gradient-to-l from-purple-600 via-indigo-500 to-primary hover:bg-primary text-white px-6 py-2 rounded-full shadow-md hover:shadow-lg transition-all">
+          <Link href="#contact" onClick={arr}>For Investors</Link>
+          </Button>
+          
+          <div className="flex items-center space-x-3 ml-2">
             <ModeToggle />
-            <Button className=' bg-foreground dark:bg-teal-500 px-6 py-2 dark:text-white rounded-full hover:bg-primary-dark shadow-lg transition-transform duration-200 transform hover:scale-105'>
-              <Link href="https://www.instagram.com/apeirocraft/" target="_blank" ><InstagramLogoIcon /></Link>
+            <Button size="icon" variant="ghost" className="rounded-full p-2 hover:bg-purple-100 dark:hover:bg-purple-900/30">
+              <Link href="https://www.instagram.com/apeirocraft/" target="_blank">
+                <InstagramLogoIcon className="w-5 h-5 text-purple-500" />
+              </Link>
             </Button>
           </div>
+        </nav>
+
+        {/* Mobile Hamburger Menu */}
+        <div className="lg:hidden flex items-center space-x-3">
+          <ModeToggle />
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="text-gray-700 dark:text-gray-300 hover:text-purple-500 transition-colors p-2 rounded-full hover:bg-purple-100 dark:hover:bg-purple-900/30"
+          >
+            {isOpen ? (
+              <XIcon className="w-6 h-6" />
+            ) : (
+              <MenuIcon className="w-6 h-6" />
+            )}
+          </button>
         </div>
-      )}
-    </div>
-    
+      </div>
+
+      {/* Mobile Navigation */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div 
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.3 }}
+            className="lg:hidden bg-white/95 dark:bg-black/95 backdrop-blur-md overflow-hidden"
+          >
+            <nav className="flex flex-col items-center space-y-5 py-6">
+              {routeList.map(({ href, label }) => (
+                <Link
+                  key={href}
+                  href={href}
+                  className="text-lg font-medium text-gray-700 dark:text-gray-300 hover:text-purple-500 transition-colors"
+                  onClick={() => setIsOpen(false)}
+                >
+                  {label}
+                </Link>
+              ))}
+              <div className="flex flex-col w-full items-center space-y-3 px-10 pt-2">
+                <Button variant="outline" className="w-full border-2 border-purple-500 text-purple-500 hover:bg-purple-500/10 rounded-full">
+                  <Link href="/login">Sign In</Link>
+                
+                </Button>
+                <Button className="w-full bg-gradient-to-r from-purple-600 to-blue-500 hover:from-purple-700 hover:to-blue-600 text-white rounded-full shadow-md">
+                  
+                  <Link href="#contact" onClick={arr}>For Investors</Link>
+                  
+                </Button>
+                <Button size="icon" variant="ghost" className="mt-2 rounded-full p-2 hover:bg-purple-100 dark:hover:bg-purple-900/30">
+                  <Link href="https://www.instagram.com/apeirocraft/" target="_blank">
+                    <InstagramLogoIcon className="w-5 h-5 text-purple-500" />
+                  </Link>
+                </Button>
+              </div>
+            </nav>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </header>
   );
 };
 
