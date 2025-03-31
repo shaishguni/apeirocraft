@@ -2,7 +2,7 @@
 import React from 'react';
 import { redirect } from 'next/navigation';
 import { getKindeServerSession } from '@kinde-oss/kinde-auth-nextjs/server';
-
+import { LogoutLink } from '@kinde-oss/kinde-auth-nextjs/server';
 
 const DashboardPage = async () => {
   const { isAuthenticated } = getKindeServerSession();
@@ -21,6 +21,12 @@ const DashboardPage = async () => {
         </div>
         <p className="text-gray-600 mb-4">We're working on building something awesome for you.</p>
         <p className="text-sm text-gray-500">Please check back soon!</p>
+        
+        <div className="mt-6">
+         
+            <LogoutLink>Logout</LogoutLink>
+
+        </div>
       </div>
     </div>
   );
