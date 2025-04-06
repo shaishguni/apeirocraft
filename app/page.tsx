@@ -24,7 +24,7 @@ export default async function  Home() {
   } 
   return (
 
-    <div className="flex-row w-full overflow-none  space-y-12 h-full items-center justify-between md:p-12 mx-0 my-0 ">
+    <div className="flex-row w-full overflow-none  space-y-12 h-full items-center justify-between md:p-4 mx-0 my-0 ">
       <Navbar/>
      <HeroSection/> 
      <Benefits/>

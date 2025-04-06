@@ -1,8 +1,10 @@
+"use server";
+
 import React from 'react'
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import { redirect } from "next/navigation";
 
-export default  async function DashbaordLayout({
+export default  async function DashboardLayout({
     children,
 }: Readonly<{
     children: React.ReactNode;
