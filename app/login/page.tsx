@@ -47,10 +47,21 @@ const LoginPage = () => {
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.3, duration: 0.7 }}
         >
-          <h1 className="text-white text-5xl font-bold mb-6 tracking-tight">Welcome back</h1>
-          <p className="text-white/90 text-xl leading-relaxed max-w-md">
-            Sign in to continue your journey with us and unlock the full potential of Apeirocraft
+          <motion.h1 
+            className="text-transparent bg-clip-text bg-gradient-to-r from-white to-blue-200 text-5xl font-extrabold mb-6 tracking-tight drop-shadow-md"
+            whileHover={{ scale: 1.02 }}
+          >
+            Welcome to Apeirocraft
+          </motion.h1>
+          <p className="text-blue-50 text-xl leading-relaxed max-w-md drop-shadow-lg">
+            We're excited to see you again! Sign in to continue creating, exploring, and bringing your amazing ideas to life.
           </p>
+          <motion.div 
+            className="w-24 h-1.5 bg-gradient-to-r from-primary to-blue-400 rounded-full mt-6"
+            initial={{ width: 0 }}
+            animate={{ width: 96 }}
+            transition={{ delay: 0.8, duration: 0.8 }}
+          />
         </motion.div>
       </motion.div>
 
@@ -90,9 +101,9 @@ const LoginPage = () => {
                 <Button 
                   variant="outline" 
                   size="lg" 
-                  className="w-full flex items-center justify-center gap-2 border-2 border-gray-200 rounded-xl py-6 font-medium text-gray-700 transition-all duration-200 hover:border-primary/30 hover:shadow-md hover:shadow-primary/10"
+                  className="w-full flex items-center justify-center gap-2 border-2 border-gray-200 rounded-xl py-6 font-medium text-white transition-all duration-200 hover:border-primary/30 hover:shadow-md hover:shadow-primary/50"
                 >
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="mr-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="mr-2  dark:text-white">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                   </svg>
                   <span>Continue with Kinde Auth</span>
