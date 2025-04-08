@@ -6,9 +6,7 @@ import { CheckCircle2,  Sparkles } from "lucide-react";
 // import {Share2,Copy,ArrowRight} from "lucide-react"
 import { motion } from "framer-motion";
 import { LogoutLink } from "@kinde-oss/kinde-auth-nextjs/components";
-import { useKindeAuth } from "@kinde-oss/kinde-auth-nextjs";
 import confetti from 'canvas-confetti';
-// import Link from "next/link";
 
 export default function LoginFlexPage() {
   // const username = "@shaishguni"; 
