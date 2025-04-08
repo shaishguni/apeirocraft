@@ -20,7 +20,7 @@ export default async function  Home() {
   const authenticated =  await isAuthenticated();
         
   if (authenticated) {
-    redirect('/login');
+    redirect('/dashboard');
   } 
   return (
 

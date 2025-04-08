@@ -13,7 +13,7 @@ const { isAuthenticated } = getKindeServerSession();
 const authenticated = await isAuthenticated();
 
 if (!authenticated) {
-    redirect('/api/auth/login');
+    redirect('/login');
 }
     return (
     <div className='w-full h-full'>
