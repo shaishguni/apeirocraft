@@ -1,6 +1,6 @@
 "use client"
 import React, { useEffect } from "react";
-// import { useState } from "react";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { CheckCircle2,  Sparkles } from "lucide-react";
 // import {Share2,Copy,ArrowRight} from "lucide-react"
@@ -13,8 +13,21 @@ import confetti from 'canvas-confetti';
 export default function LoginFlexPage() {
   // const username = "@shaishguni"; 
   // Fetch dynamically from user session in prod
-  const { user } = useKindeAuth();
-  const username = user?.given_name ? `@${user.given_name.toLowerCase()}` : "@guest";
+  const [username, setUsername] = useState("@guest");
+
+  useEffect(() => {
+    async function fetchUsername() {
+      try {
+        const response = await fetch("/api/user");
+        const data = await response.json();
+        setUsername(data.username);
+      } catch (error) {
+        console.error("Error fetching username:", error);
+        setUsername("@guest");
+      }
+    }
+    fetchUsername();
+  }, []);
 
   useEffect(() => {
     // Launch confetti on component mount
