@@ -101,7 +101,7 @@ const LoginPage = () => {
                 <Button 
                   variant="outline" 
                   size="lg" 
-                  className="w-full flex items-center justify-center gap-2 border-2 border-gray-200 rounded-xl py-6 font-medium text-white transition-all duration-200 hover:border-primary/30 hover:shadow-md hover:shadow-primary/50"
+                  className="w-full flex items-center justify-center gap-2 border-2 border-gray-200 rounded-xl py-6 font-medium text-black dark:text-dark transition-all duration-200 hover:border-primary/30 hover:shadow-md hover:shadow-primary/50"
                 >
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="mr-2  dark:text-white">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
