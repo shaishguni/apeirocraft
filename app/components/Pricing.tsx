@@ -1,6 +1,6 @@
-"use client"
+"use client";
 
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -24,231 +24,266 @@ interface PlanProps {
   title: string;
   popular: PopularPlan;
   price: string;
+  ongoingPrice?: string;
   duration: string;
   description: string;
   buttonText: string;
   benefitList: string[];
   category: string;
+  isBundle?: boolean;
 }
 
-
 const plans: PlanProps[] = [
-  // Web Development Packages
+  // Web Development (One-Time)
   {
-    title: "Starter Web Development Package",
+    title: "Basic Web Development",
     popular: PopularPlan.NO,
-    price: '2500',
+    price: '3000',
     duration: "One-Time",
-    description: "Launch your website with essential features. Ideal for small businesses establishing an online presence.",
-    // note: "",
+    description: "Launch a professional website with essential features. Perfect for solopreneurs and small businesses.",
     buttonText: "Get Started",
     benefitList: [
-      "Custom design tailored to your niche",
-      "Responsive & mobile-friendly",
-      "Basic SEO optimized for increased visibility",
-      "1-month post-launch support",
+      "5-page custom website",
+      "Mobile-responsive design",
+      "Basic SEO optimization",
+      "1-month post-launch support"
     ],
     category: "Web"
   },
   {
-    title: "Professional Web Development Package",
+    title: "Standard Web Development",
     popular: PopularPlan.YES,
-    price: '5500',
+    price: '7000',
     duration: "One-Time",
-    description: "A more robust website with added functionalities. Perfect for growing businesses needing more customization.",
-    // note: "",
+    description: "A robust website with advanced functionality for growing businesses.",
     buttonText: "Upgrade Now",
     benefitList: [
-      "Includes all features from Starter",
-      "Custom blog, e-commerce, and booking systems",
-      "Full SEO audit + Local SEO optimization",
-      "60-day support with updates",
+      "10-page custom website",
+      "E-commerce or booking system",
+      "Full SEO audit + local SEO",
+      "3-month support with updates"
     ],
     category: "Web"
   },
   {
-    title: "Enterprise Web Development Package",
+    title: "Advanced Web Development",
     popular: PopularPlan.NO,
-    price: '12000',
+    price: '15000',
     duration: "One-Time",
-    description: "Tailored for large enterprises, this package includes extensive customization and advanced features like API integrations.",
-    // note: "",
+    description: "Custom enterprise solutions with extensive integrations for large businesses.",
     buttonText: "Contact Us",
     benefitList: [
-      "Includes all features from Professional",
       "Unlimited pages + CRM/ERP integrations",
-      "Global SEO strategy and continuous optimization",
-      "1-year full support and unlimited updates",
+      "Global SEO strategy",
+      "Custom API development",
+      "1-year full support"
     ],
     category: "Web"
   },
 
-  // Content Creation Packages
+  // Content Creation (Monthly)
   {
-    title: "Essentials Content Creation Package",
+    title: "Basic Content Creation",
     popular: PopularPlan.NO,
     price: '1500',
     duration: "mo",
-    description: "Perfect for small businesses looking for essential content to establish their brand. Includes visuals and videos.",
-    // note: "",
+    description: "Essential content to establish your brand’s presence online.",
     buttonText: "Get Started",
     benefitList: [
-      "8 static graphics + 2 animations",
-      "2 basic promotional videos",
-      "Basic branding with logo and fonts",
-      "1 strategy call per month",
+      "4 blog posts/month",
+      "Basic graphics for social media",
+      "1 strategy call/month",
+      "SEO-optimized content"
     ],
     category: "Content"
   },
   {
-    title: "Advanced Content Creation Package",
+    title: "Standard Content Creation",
     popular: PopularPlan.YES,
-    price: '3500',
+    price: '4000',
     duration: "mo",
-    description: "For growing businesses seeking more engaging, branded content. This package adds more visuals and advanced video production.",
-    // note: "",
+    description: "Engaging content to scale your brand and captivate audiences.",
     buttonText: "Upgrade Now",
     benefitList: [
-      "Includes all features from Essentials",
-      "12 graphics + 4 animations",
-      "4 high-quality branded videos",
-      "Full branding strategy + visual direction",
-      "Bi-weekly strategy calls",
+      "8 blog posts/month",
+      "2 promotional videos/month",
+      "Advanced graphics package",
+      "Bi-weekly strategy calls"
     ],
     category: "Content"
   },
   {
-    title: "Premium Content Creation Package",
+    title: "Advanced Content Creation",
     popular: PopularPlan.NO,
-    price: '7500',
+    price: '8000',
     duration: "mo",
-    description: "For large enterprises needing high-impact, cinematic-level content. Full branding strategy and custom video productions.",
-    // note: "",
+    description: "High-impact content for enterprises needing a dominant digital presence.",
     buttonText: "Contact Us",
     benefitList: [
-      "Includes all features from Advanced",
-      "16 branded graphics + 6 advanced animations",
-      "6 cinematic, high-quality videos",
-      "Full branding implementation across all content",
-      "Weekly executive-level strategy calls",
+      "Unlimited blog posts",
+      "Full multimedia production",
+      "Weekly strategy calls",
+      "Comprehensive branding"
     ],
     category: "Content"
   },
 
-  // SMMA Packages
+  // SMMA (Monthly)
   {
-    title: "Starter SMMA Package",
+    title: "Basic SMMA",
     popular: PopularPlan.NO,
+    price: '1000',
+    duration: "mo",
+    description: "Kickstart your social media presence with targeted management.",
+    buttonText: "Get Started",
+    benefitList: [
+      "Management of 2 platforms",
+      "10 posts/month",
+      "Monthly engagement reports",
+      "1 strategy call/month"
+    ],
+    category: "SMMA"
+  },
+  {
+    title: "Standard SMMA",
+    popular: PopularPlan.YES,
     price: '2000',
     duration: "mo",
-    description: "Essential social media management services for small businesses to get started with social media marketing.",
-    // note: "",
-    buttonText: "Get Started",
-    benefitList: [
-      "Platform management for Facebook, Instagram, and LinkedIn",
-      "Basic social media content calendar",
-      "Monthly engagement reports",
-      "1 strategy call per month",
-    ],
-    category: "SMMA"
-  },
-  {
-    title: "Advanced SMMA Package",
-    popular: PopularPlan.YES,
-    price: '4000',
-    duration: "mo",
-    description: "A more comprehensive package for businesses aiming to scale with tailored social media strategies and increased engagement.",
-    // note: "",
+    description: "Scale your social media with tailored strategies and ads.",
     buttonText: "Upgrade Now",
     benefitList: [
-      "Includes all features from Starter",
-      "Custom ad campaigns for lead generation",
-      "In-depth audience insights and analytics",
+      "Management of 3 platforms",
+      "20 posts/month + ad campaigns",
       "Bi-weekly performance reports",
+      "In-depth audience analytics"
     ],
     category: "SMMA"
   },
   {
-    title: "Premium SMMA Package",
-    popular: PopularPlan.NO,
-    price: '6000',
-    duration: "mo",
-    description: "A full-service solution for enterprises looking for high-level, multi-platform social media strategies with advanced analytics and reporting.",
-    // note: "",
-    buttonText: "Contact Us",
-    benefitList: [
-      "Includes all features from Advanced",
-      "Multi-platform strategy including Twitter, YouTube, and TikTok",
-      "Advanced reporting + competitor analysis",
-      "Weekly performance optimization and strategy calls",
-    ],
-    category: "SMMA"
-  },
-
-  // Combo Plans
-  {
-    title: "Combo Web + Content Creation Starter",
+    title: "Advanced SMMA",
     popular: PopularPlan.NO,
     price: '4000',
     duration: "mo",
-    description: "Bundle essential web development with basic content creation (graphics and videos). Ideal for small businesses needing both services.",
-    // note: "",
-    buttonText: "Get Started",
-    benefitList: [
-      "All features from Starter Web + 8 static graphics",
-      "2 basic promotional videos",
-      "1-month post-launch support",
-      "1 strategy call for content and website optimization",
-    ],
-    category: "Combo"
-  },
-  {
-    title: "Combo Content Creation + SMMA",
-    popular: PopularPlan.YES,
-    price: '5000',
-    duration: "mo",
-    description: "A powerful combination of content creation and social media marketing to scale your business's online presence.",
-    // note: "",
-    buttonText: "Get Started",
-    benefitList: [
-      "All features from Essentials + Social media strategy",
-      "12 graphics + 4 animations",
-      "4 high-quality branded videos",
-      "Bi-weekly social media performance reports",
-      "Monthly content and campaign strategy meetings",
-    ],
-    category: "Combo"
-  },
-  {
-    title: "Ultimate Combo Growth Package",
-    popular: PopularPlan.NO,
-    price: '8500',
-    duration: "mo",
-    description: "A comprehensive, all-inclusive package combining web development, content creation, and SMMA services with 24/7 support for businesses aiming for rapid growth.",
-    // note: "",
+    description: "Full-service social media strategies for maximum impact.",
     buttonText: "Contact Us",
     benefitList: [
-      "All features from previous packages",
-      "Comprehensive web development, content creation, and SMMA services",
-      "Advanced business solutions tailored for your growth strategy",
-      "24/7 support and consultation",
+      "Multi-platform management",
+      "30 posts/month + advanced ads",
+      "Weekly optimization reports",
+      "Competitor analysis"
     ],
-    category: "Combo"
+    category: "SMMA"
   },
+
+  // // SaaS Tools (Monthly Add-On)
+  // {
+  //   title: "Basic SaaS Tools",
+  //   popular: PopularPlan.NO,
+  //   price: '500',
+  //   duration: "mo",
+  //   description: "Core SaaS features to streamline your operations.",
+  //   buttonText: "Get Started",
+  //   benefitList: [
+  //     "1 user license",
+  //     "Core analytics features",
+  //     "Basic support",
+  //     "Standard integrations"
+  //   ],
+  //   category: "SaaS"
+  // },
+  // {
+  //   title: "Standard SaaS Tools",
+  //   popular: PopularPlan.YES,
+  //   price: '1200',
+  //   duration: "mo",
+  //   description: "Advanced SaaS tools for growing businesses.",
+  //   buttonText: "Upgrade Now",
+  //   benefitList: [
+  //     "5 user licenses",
+  //     "Advanced analytics + reporting",
+  //     "Priority support",
+  //     "Custom branding"
+  //   ],
+  //   category: "SaaS"
+  // },
+  // {
+  //   title: "Advanced SaaS Tools",
+  //   popular: PopularPlan.NO,
+  //   price: '2500',
+  //   duration: "mo",
+  //   description: "Enterprise-grade SaaS solutions with full customization.",
+  //   buttonText: "Contact Us",
+  //   benefitList: [
+  //     "10 user licenses",
+  //     "Custom integrations",
+  //     "Dedicated support",
+  //     "Full feature access"
+  //   ],
+  //   category: "SaaS"
+  // },
+
+  // Bundled Packages
+  {
+    title: "Starter Bundle",
+    popular: PopularPlan.NO,
+    price: '4500',
+    ongoingPrice: '2000',
+    duration: "mo",
+    description: "Launch your digital presence with essential services at a discount.",
+    buttonText: "Get Started",
+    benefitList: [
+      "Basic Web Development + Basic Content + Basic SMMA",
+      "10% savings vs. individual services",
+      "1-month post-launch support",
+      "Monthly strategy call",
+      "Services worth $5,500 first month"
+    ],
+    category: "Bundles",
+    isBundle: true
+  },
+  {
+    title: "Growth Bundle",
+    popular: PopularPlan.YES,
+    price: '10000',
+    ongoingPrice: '5000',
+    duration: "mo",
+    description: "Scale rapidly with a powerful combination of services and SaaS tools.",
+    buttonText: "Upgrade Now",
+    benefitList: [
+      "Standard Web + Standard Content + Standard SMMA + Basic SaaS",
+      "15% savings vs. individual services",
+      "3-month support package",
+      "Bi-weekly strategy calls",
+      "Services worth $13,000 first month"
+    ],
+    category: "Bundles",
+    isBundle: true
+  },
+  {
+    title: "Enterprise Bundle",
+    popular: PopularPlan.NO,
+    price: '20000',
+    ongoingPrice: '10000',
+    duration: "mo",
+    description: "Dominate your market with premium services and dedicated support.",
+    buttonText: "Contact Us",
+    benefitList: [
+      "Advanced Web + Advanced Content + Advanced SMMA + Advanced SaaS",
+      "20% savings vs. individual services",
+      "Dedicated account manager",
+      "Weekly strategy calls",
+      "Services worth $27,000 first month"
+    ],
+    category: "Bundles",
+    isBundle: true
+  }
 ];
 
 
-const categories = [
-  "Web",
-  "SMMA",
-  "Content",
-  "Combo",
-];
-
-
+const categories = ["Bundles","Web", "SMMA" ,"Content"];
 
 const Pricing = () => {
-  const [selectedCategory, setSelectedCategory] = useState<string>("Web");
+  const [selectedCategory, setSelectedCategory] = useState<string>("Bundles"); // Default to Bundles for max visibility
 
   const filteredPlans = selectedCategory
     ? plans.filter(plan => plan.category === selectedCategory)
@@ -256,7 +291,6 @@ const Pricing = () => {
 
   return (
     <section id="pricing" className="relative overflow-hidden py-24 sm:py-32">
-      {/* Background elements */}
       <div className="absolute inset-0 bg-gradient-to-b from-background to-background/80 z-0"></div>
       <div className="absolute top-0 left-1/2 w-[1000px] h-[1000px] -translate-x-1/2 -translate-y-1/2 bg-primary/5 rounded-full blur-3xl"></div>
       
@@ -270,13 +304,11 @@ const Pricing = () => {
           <Badge className="px-3.5 py-1.5 text-sm font-medium">
             Pricing Plans
           </Badge>
-
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight">
-            Invest in Your Business Growth
+            Power Your Business Growth
           </h2>
-
           <p className="md:w-2/3 mx-auto text-xl text-muted-foreground">
-            Select a package that aligns with your business goals. Our solutions are designed to deliver maximum ROI and measurable results.
+            Choose a plan tailored to your goals. From individual services to all-in-one bundles, we deliver unmatched value and results.
           </p>
         </motion.div>
 
@@ -303,7 +335,7 @@ const Pricing = () => {
         </div>
 
         <div className="grid mt-12 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredPlans.map(({ title, popular, price, duration, description, buttonText, benefitList }, index) => (
+          {filteredPlans.map(({ title, popular, price, ongoingPrice, duration, description, buttonText, benefitList, isBundle }, index) => (
             <motion.div
               key={title}
               initial={{ opacity: 0, y: 30 }}
@@ -327,14 +359,19 @@ const Pricing = () => {
                 )}
                 <CardHeader className="pb-8">
                   <CardTitle className="text-2xl font-bold pb-3">{title}</CardTitle>
-
                   <CardDescription className="text-base pb-6">
                     {description}
                   </CardDescription>
-
-                  <div className="flex items-baseline">
-                    <span className="text-5xl font-bold">${price}</span>
-                    <span className="ml-2 text-muted-foreground font-medium">/{duration}</span>
+                  <div className="flex flex-col gap-1">
+                    <div className="flex items-baseline">
+                      <span className="text-5xl font-bold">${price}</span>
+                      <span className="ml-2 text-muted-foreground font-medium">/{duration}</span>
+                    </div>
+                    {isBundle && ongoingPrice && (
+                      <p className="text-sm text-muted-foreground">
+                        Then ${ongoingPrice}/mo ongoing
+                      </p>
+                    )}
                   </div>
                 </CardHeader>
 
@@ -379,7 +416,7 @@ const Pricing = () => {
           className="mt-16 text-center"
         >
           <p className="text-muted-foreground">
-            Not finding what you need? <Link href="https://calendly.com/gunishaish/free-website-consultation-with-apeirocraft" className="text-primary font-medium underline-offset-4 hover:underline">Schedule a call</Link> for a custom solution.
+            Need a custom solution? <Link href="https://calendly.com/gunishaish/free-website-consultation-with-apeirocraft" className="text-primary font-medium underline-offset-4 hover:underline">Schedule a call</Link> today.
           </p>
         </motion.div>
       </div>
