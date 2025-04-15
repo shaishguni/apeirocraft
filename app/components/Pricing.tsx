@@ -228,7 +228,7 @@ const plans: PlanProps[] = [
     popular: PopularPlan.NO,
     price: '4500',
     ongoingPrice: '2000',
-    duration: "mo",
+    duration: "One-Time",
     description: "Launch your digital presence with essential services at a discount.",
     buttonText: "Get Started",
     benefitList: [
@@ -246,7 +246,7 @@ const plans: PlanProps[] = [
     popular: PopularPlan.YES,
     price: '10000',
     ongoingPrice: '5000',
-    duration: "mo",
+    duration: "One-Time",
     description: "Scale rapidly with a powerful combination of services and SaaS tools.",
     buttonText: "Upgrade Now",
     benefitList: [
@@ -264,7 +264,7 @@ const plans: PlanProps[] = [
     popular: PopularPlan.NO,
     price: '20000',
     ongoingPrice: '10000',
-    duration: "mo",
+    duration: "One-Time",
     description: "Dominate your market with premium services and dedicated support.",
     buttonText: "Contact Us",
     benefitList: [
